@@ -1,0 +1,23 @@
+<li class="card card-compact card-bordered bg-base-100 shadow-xl">
+      <figure>
+        <img
+          src="{{ post.data.image }}"
+          alt="Shoes"
+        />
+      </figure>
+      <div class="card-body">
+        <h2 class="card-title">{{ post.data.title }}</h2>
+        <p>{{ post.data.date | postDate }}</p>
+        <p>
+          {{ post.data.description }}
+        </p>
+        <div class="card-actions">
+            {%- for tag in post.data.tags -%}
+          <div class="badge badge-outline">{{ tag }}</div>
+            {%- endfor -%}
+        </div>
+        <div class="card-actions justify-end">
+          <a href="{{ post.url }}" class="btn btn-primary">Leggi Ora</a>
+        </div>
+      </div>
+    </li>

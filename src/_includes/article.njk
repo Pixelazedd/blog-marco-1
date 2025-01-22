@@ -1,0 +1,16 @@
+---
+layout: 'base.njk'
+---
+<div class="container mx-auto">
+<section class="my-10 prose">
+
+<h1>{{ title }}</h1>
+
+<p class="italic">Scritto da {{ author }} il {{ date | postDate }}
+
+<img src="{{ image }}" alt="{{ imageAlt }}" />
+
+{{ content | safe }}
+
+</section>
+</div>
