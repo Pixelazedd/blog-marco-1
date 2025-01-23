@@ -2,11 +2,18 @@
 layout: 'base.njk'
 ---
 <div class="container mx-auto">
-<section class="my-10 prose">
+<section class="my-10 prose px-3">
 
-<h1>{{ title }}</h1>
+<a class="btn btn-link pl-0" href="/blog">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-5">
+        <path fill-rule="evenodd" d="M11.78 5.22a.75.75 0 0 1 0 1.06L8.06 10l3.72 3.72a.75.75 0 1 1-1.06 1.06l-4.25-4.25a.75.75 0 0 1 0-1.06l4.25-4.25a.75.75 0 0 1 1.06 0Z" clip-rule="evenodd" />
+    </svg>
+    Torna al Blog
+</a>
 
-<p class="italic">Scritto da {{ author }} il {{ date | postDate }}
+<h1 class="mt-5">{{ title }}</h1>
+
+<p>Scritto da <span class="italic">{{ author }}</span> il <span class="italic">{{ date | postDate }}</span>
 
 <img src="{{ image }}" alt="{{ imageAlt }}" />
 

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="lofi">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -17,13 +17,13 @@
       <ul class="menu menu-horizontal items-center px-1">
         <li class="hidden sm:inline-block"><a href="/">Home</a></li>
         <li class="hidden sm:inline-block">
-          <a href="#">About</a>
+          <a href="/about">About</a>
         </li>
         <li class="hidden sm:inline-block"><a href="/blog" class="btn">Blog</a></li>
         <li>
           <label class="swap swap-rotate px-0 sm:px-4">
             <!-- this hidden checkbox controls the state -->
-            <input type="checkbox" class="theme-controller" value="light" />
+            <input type="checkbox" id="darkModeToggle" onchange="updateDarkMode(this)" class="theme-controller" value="light" />
 
             <!-- sun icon -->
             <svg
@@ -71,7 +71,7 @@
           class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
         >
         <li><a href="/">Home</a></li>
-          <li><a>About</a></li>
+          <li><a href="/about">About</a></li>
           <li><a href="/blog">Blog</a></li>
         </ul>
       </div>
@@ -80,11 +80,18 @@
 </header>
     <main>
     <div class="container mx-auto">
-<section class="my-10 prose">
+<section class="my-10 prose px-3">
 
-<h1>First blog post</h1>
+<a class="btn btn-link pl-0" href="/blog">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-5">
+        <path fill-rule="evenodd" d="M11.78 5.22a.75.75 0 0 1 0 1.06L8.06 10l3.72 3.72a.75.75 0 1 1-1.06 1.06l-4.25-4.25a.75.75 0 0 1 0-1.06l4.25-4.25a.75.75 0 0 1 1.06 0Z" clip-rule="evenodd" />
+    </svg>
+    Torna al Blog
+</a>
 
-<p class="italic">Scritto da Alessandro Riva il Jan 19, 2025
+<h1 class="mt-5">First blog post</h1>
+
+<p>Scritto da <span class="italic">Alessandro Riva</span> il <span class="italic">Jan 19, 2025</span>
 
 <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=400&amp;auto=format&amp;fit=crop&amp;q=60&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGJvb2t8ZW58MHx8MHx8fDA%3D" alt="biblioteca" />
 
@@ -96,14 +103,13 @@
     </main>
     <footer class="footer footer-center bg-base-200 text-base-content rounded p-10">
   <nav class="grid grid-flow-col gap-4">
-    <a class="link link-hover">About us</a>
-    <a class="link link-hover">Contact</a>
-    <a class="link link-hover">Jobs</a>
-    <a class="link link-hover">Press kit</a>
+    <a href="/" class="link link-hover">Home</a>
+    <a href="/about" class="link link-hover">About</a>
+    <a href="/blog" class="link link-hover">Blog</a>
   </nav>
   <nav>
     <div class="grid grid-flow-col gap-4">
-      <a>
+      <a href="https://x.com" target="_blank">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="24"
@@ -116,7 +122,7 @@
           ></path>
         </svg>
       </a>
-      <a>
+      <a href="https://youtube.com" target="_blank">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="24"
@@ -129,7 +135,7 @@
           ></path>
         </svg>
       </a>
-      <a>
+      <a href="https://facebook.com" target="_blank">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="24"
@@ -146,8 +152,7 @@
   </nav>
   <aside>
     <p>
-      Copyright © 2025 - All right reserved by ACME
-      Industries Ltd
+      Copyright © 2025. Tutti i diritti riservati.
     </p>
   </aside>
 </footer>
