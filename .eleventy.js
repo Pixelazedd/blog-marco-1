@@ -3,6 +3,8 @@ const { DateTime } = require("luxon");
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("./src/output.css");
   eleventyConfig.addPassthroughCopy("./src/index.js");
+  eleventyConfig.addPassthroughCopy("./src/assets");
+  eleventyConfig.addPassthroughCopy("./src/admin");
 
   // get the current year for copyright date
   eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);
