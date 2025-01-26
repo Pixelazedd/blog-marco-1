@@ -22,7 +22,7 @@
         </p>
         <div class="card-actions">
             {%- for tag in post.data.tags -%}
-          <div class="badge badge-outline">{{ tag }}</div>
+          <a class="badge badge-outline" href="/tags/{{ tag }}/">{{ tag }}</a>
             {%- endfor -%}
         </div>
         <div class="card-actions justify-end">

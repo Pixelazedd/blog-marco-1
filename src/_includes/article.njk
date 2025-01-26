@@ -2,7 +2,7 @@
 layout: 'base.njk'
 ---
 <div class="container mx-auto">
-<section class="my-10 prose px-3">
+<section class="my-10 px-3">
 
 <a class="btn btn-link pl-0" href="/blog">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-5">
@@ -11,13 +11,41 @@ layout: 'base.njk'
     Torna al Blog
 </a>
 
-<h1 class="mt-5">{{ title }}</h1>
+<h1 class="font-bold text-4xl mt-10">{{ title }}</h1>
 
-<p>Scritto da <span class="italic">{{ author }}</span> il <span class="italic">{{ date | postDate }}</span>
+<p class="my-5">Scritto da <span class="italic">{{ author }}</span> il <span class="italic">{{ date | postDate }}</span>
 
-<img src="{{ image }}" alt="{{ imageAlt }}" />
+<div class="card-actions">
+    {%- for tag in tags -%}
+        <a class="badge badge-outline" href="/tags/{{ tag }}/">{{ tag }}</a>
+    {%- endfor -%}
+</div>
+
+<div class="my-10">
+    <img src="{{ image }}" alt="{{ imageAlt }}" />
+</div>
+
+<div class="prose">
 
 {{ content | safe }}
+
+</div>
+
+{%- if collections.post %}
+{%- set previousPost = collections.post | getPreviousCollectionItem %}
+{%- set nextPost = collections.post | getNextCollectionItem %}
+{%- if nextPost or previousPost %}
+<ul class="flex justify-between mt-16">
+	{%- if previousPost %}<li><div class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-5">
+        <path fill-rule="evenodd" d="M11.78 5.22a.75.75 0 0 1 0 1.06L8.06 10l3.72 3.72a.75.75 0 1 1-1.06 1.06l-4.25-4.25a.75.75 0 0 1 0-1.06l4.25-4.25a.75.75 0 0 1 1.06 0Z" clip-rule="evenodd" />
+    </svg> <p>Precedente</p></div><a class="btn-link font-medium p-0" href="{{ previousPost.url }}">{{ previousPost.data.title }}</a></li>{% endif %}
+	{%- if nextPost %}<li><div class="flex items-center justify-end">
+<p>Prossimo</p><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-5">
+  <path fill-rule="evenodd" d="M8.22 5.22a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06L11.94 10 8.22 6.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
+</svg></div><a class="btn-link font-medium p-0" href="{{ nextPost.url }}">{{ nextPost.data.title }}</a></li>{% endif %}
+</ul>
+{%- endif %}
+{%- endif %}
 
 </section>
 </div>

@@ -1,0 +1,24 @@
+---
+layout: "base.njk"
+pagination:
+  data: collections
+  size: 1
+  alias: tag
+permalink: /tags/{{ tag }}/
+eleventyComputed:
+  title: "Blog Posts Taggati \"{{ tag }}\""
+---
+
+<section class="container px-3 sm:px-0 mx-auto">
+    <h1 class="font-bold text-4xl mt-10">{{ title }}</h1>
+
+<ul
+    class="container my-10 mx-auto grid sm:grid-cols-2 lg:grid-cols-3 gap-x-5 gap-y-10"
+  >
+    {% set taglist = collections[ tag ] %}
+    {% for post in taglist | reverse %}
+        {% include 'article-snippet.njk' %}
+    {%- endfor -%}
+  </ul>
+
+</section>
