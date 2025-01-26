@@ -1,7 +1,7 @@
 ---
 title: New Blog Post Published from CMS
 description: This is the first blog post published using the Decap CMS!
-author: Alessandro Riva
+author: Marco Pirola
 date: 2025-01-25T01:22:00.000Z
 image: /assets/blog/foto-libri.jpg
 imageAlt: Libri
