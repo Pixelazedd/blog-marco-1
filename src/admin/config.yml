@@ -18,14 +18,14 @@ collections:
       - { label: "Image Caption", name: "imageAlt", widget: "string" }
       - { label: "Body", name: "body", widget: "markdown" }
       - { label: "Tags", name: "tags", widget: "list", default: ["post"] }
-collections:
-      - name: "navigation"
-        label: "Navigation"
-        file: "src/_data/navigation.yml"
+
+  - name: "navigation"
+    label: "Navigation"
+    file: "src/_data/navigation.yml"
+    fields:
+      - label: "Navigation Items"
+        name: "items"
+        widget: "list"
         fields:
-          - label: "Navigation Items"
-            name: "items"
-            widget: "list"
-            fields:
-              - {label: "Text", name: "text", widget: "string"}
-              - {label: "URL", name: "url", widget: "string"}
+          - { label: "Text", name: "text", widget: "string" }
+          - { label: "URL", name: "url", widget: "string" }
