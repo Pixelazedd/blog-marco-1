@@ -1,0 +1,25 @@
+---
+layout: "base.njk"
+---
+
+<div class="hero bg-base-200 min-h-dvh">
+  <div class="hero-content text-center">
+    <div class="max-w-md">
+      <h1 class="text-5xl font-bold">{{ main_heading }}</h1>
+      <p class="py-6">
+        {{ hero_description }}
+      </p>
+      <a href="{{ hero_button_url }}" class="btn btn-primary">{{ hero_button_text }}</a>
+    </div>
+  </div>
+</div>
+<section class="container px-3 sm:px-0 mx-auto">
+  <h2 class="font-bold text-4xl mt-10">{{ featured_title }}</h2>
+  <ul
+    class="container my-10 mx-auto grid sm:grid-cols-2 lg:grid-cols-3 gap-x-5 gap-y-10"
+  >
+    {%- for post in collections.featured | reverse -%}
+      {% include 'article-snippet.njk' %}
+    {%- endfor -%}
+  </ul>
+</section>

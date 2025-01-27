@@ -1,4 +1,5 @@
 const { DateTime } = require("luxon");
+const yaml = require("js-yaml");
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("./src/output.css");
@@ -6,20 +7,21 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("./src/assets");
   eleventyConfig.addPassthroughCopy("./src/admin");
 
-  // get the current year for copyright date
+  eleventyConfig.addDataExtension("yml", (contents) => yaml.load(contents));
+
   eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);
 
-  // Add filter to format date in Italian locale
   eleventyConfig.addFilter("postDate", (dateObj) => {
     return DateTime.fromJSDate(dateObj)
-      .setLocale("it") // Set locale explicitly to Italian
-      .toFormat("dd MMMM yyyy"); // Format as medium date
+      .setLocale("it")
+      .toFormat("dd MMMM yyyy");
   });
 
   return {
     dir: {
       input: "src",
       output: "public",
+      data: "_data",
     },
   };
 };
