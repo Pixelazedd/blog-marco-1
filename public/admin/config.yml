@@ -1,6 +1,7 @@
 backend:
   name: git-gateway
   branch: main
+publish_mode: editorial_workflow
 media_folder: "public/assets/blog"
 public_folder: "/assets/blog"
 collections:
@@ -26,9 +27,17 @@ collections:
         name: "navigation"
         file: "src/_data/navigation.yml"
         fields:
+          - label: "Header LogoType"
+            name: "header_logotype"
+            widget: "object"
+            fields:
+              - { label: "Text", name: "text", widget: "string" }
+              - { label: "URL", name: "url", widget: "string" }
           - label: "Navigation Items"
             name: "items"
+            collapsed: false
             widget: "list"
+            allow_add: false
             fields:
               - { label: "Text", name: "text", widget: "string" }
               - { label: "URL", name: "url", widget: "string" }
@@ -58,3 +67,10 @@ collections:
               widget: "string",
             }
           - { label: "Sub-Heading", name: "featured_title", widget: "string" }
+      - label: "About"
+        name: "about"
+        file: "src/about.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Main Heading", name: "main_heading", widget: "string" }
+          - { label: "Body", name: "body", widget: "markdown" }

@@ -1,6 +1,8 @@
+header_logotype:
+  text: Marco Pirola
+  url: /
+
 items:
-  - text: Marco Pirola
-    url: /
   - text: Home
     url: /
   - text: About
