@@ -2854,12 +2854,12 @@ html {
   max-width: 28rem;
 }
 
-.max-w-prose {
-  max-width: 65ch;
-}
-
 .max-w-none {
   max-width: none;
+}
+
+.max-w-prose {
+  max-width: 65ch;
 }
 
 .flex-1 {
@@ -2913,21 +2913,6 @@ html {
 
 .border-t {
   border-top-width: 1px;
-}
-
-.border-neutral {
-  --tw-border-opacity: 1;
-  border-color: var(--fallback-n,oklch(var(--n)/var(--tw-border-opacity, 1)));
-}
-
-.border-neutral-100 {
-  --tw-border-opacity: 1;
-  border-color: rgb(245 245 245 / var(--tw-border-opacity, 1));
-}
-
-.border-neutral-200 {
-  --tw-border-opacity: 1;
-  border-color: rgb(229 229 229 / var(--tw-border-opacity, 1));
 }
 
 .border-neutral-300 {

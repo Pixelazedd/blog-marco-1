@@ -18,14 +18,43 @@ collections:
       - { label: "Image Caption", name: "imageAlt", widget: "string" }
       - { label: "Body", name: "body", widget: "markdown" }
       - { label: "Tags", name: "tags", widget: "list", default: ["post"] }
-collections:
-      - name: "navigation"
-        label: "Navigation"
+
+  - name: "navigation"
+    label: "Navigation"
+    files:
+      - label: "Navigation"
+        name: "navigation"
         file: "src/_data/navigation.yml"
         fields:
           - label: "Navigation Items"
             name: "items"
             widget: "list"
             fields:
-              - {label: "Text", name: "text", widget: "string"}
-              - {label: "URL", name: "url", widget: "string"}
+              - { label: "Text", name: "text", widget: "string" }
+              - { label: "URL", name: "url", widget: "string" }
+
+  - name: "pages"
+    label: "Pages"
+    files:
+      - label: "Homepage"
+        name: "homepage"
+        file: "src/index.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Main Heading", name: "main_heading", widget: "string" }
+          - {
+              label: "Hero Description",
+              name: "hero_description",
+              widget: "string",
+            }
+          - {
+              label: "Hero Button Text",
+              name: "hero_button_text",
+              widget: "string",
+            }
+          - {
+              label: "Hero Button URL",
+              name: "hero_button_url",
+              widget: "string",
+            }
+          - { label: "Sub-Heading", name: "featured_title", widget: "string" }
