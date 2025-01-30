@@ -9,7 +9,6 @@ tags:
   - post
   - featured
   - lol
-  - ""
 ---
 This is my new blog post
 
