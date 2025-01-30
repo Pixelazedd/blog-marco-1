@@ -59,3 +59,10 @@ collections:
               widget: "string",
             }
           - { label: "Sub-Heading", name: "featured_title", widget: "string" }
+      - label: "About"
+        name: "about"
+        file: "src/about.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Main Heading", name: "main_heading", widget: "string" }
+          - { label: "Body", name: "body", widget: "markdown" }
