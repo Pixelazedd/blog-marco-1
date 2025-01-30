@@ -29,7 +29,9 @@ collections:
         fields:
           - label: "Navigation Items"
             name: "items"
+            collapsed: false
             widget: "list"
+            allow_add: false
             fields:
               - { label: "Text", name: "text", widget: "string" }
               - { label: "URL", name: "url", widget: "string" }
