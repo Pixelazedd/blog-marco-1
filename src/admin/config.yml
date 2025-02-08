@@ -44,15 +44,16 @@ collections:
               - { label: "URL", name: "url", widget: "string" }
           - label: "Socials"
             name: "socials"
+            widget: "list"
             collapsed: false
-            widget: "object"
-            allow_add: false
             fields:
-              - {
-                  label: "LinkedIn URL",
-                  name: "linkedin url",
-                  widget: "string",
-                }
+              - label: "Platform"
+                name: "platform"
+                widget: "select"
+                options: ["linkedin"] # can add more platforms here later
+              - label: "URL"
+                name: "url"
+                widget: "string"
 
   - name: "pages"
     label: "Pages"
