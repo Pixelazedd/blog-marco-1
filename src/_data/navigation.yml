@@ -9,3 +9,7 @@ items:
     url: /about/
   - text: Blog
     url: /blog/
+
+socials:
+  - platform: linkedin
+    url: https://www.linkedin.com/in/marco-pirola-758385276/
