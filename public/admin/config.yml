@@ -36,12 +36,24 @@ collections:
               - { label: "URL", name: "url", widget: "string" }
           - label: "Navigation Items"
             name: "items"
-            collapsed: false
+            collapsed: true
             widget: "list"
             allow_add: false
             fields:
               - { label: "Text", name: "text", widget: "string" }
               - { label: "URL", name: "url", widget: "string" }
+          - label: "Socials"
+            name: "socials"
+            widget: "list"
+            collapsed: false
+            fields:
+              - label: "Platform"
+                name: "platform"
+                widget: "select"
+                options: ["linkedin"] # can add more platforms here later
+              - label: "URL"
+                name: "url"
+                widget: "string"
 
   - name: "pages"
     label: "Pages"
